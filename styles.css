@@ -250,6 +250,8 @@ h1 h2 h3 {
 	width: calc(100% - 32px);
 	padding: 16px;
 	gap:8px;
+	margin-bottom: 4px;
+  	margin-top: 4px;
 	
 	font-family: sans-serif;
 	font-style: normal;
