@@ -64,20 +64,17 @@ footer {
 	/* Auto layout */
 	
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
-	gap: 8px;
-	padding: 0px 16px;
+	gap: 16px;
+	padding: 24px 16px;
 
-	width: 960px;
-	min-height: 96px;
+	min-width: 960px;
+	min-height: 64px;
 	justify-content: left;
-	margin-left: auto;
-	margin-right: auto;
 	
 	background: #EBEEF1;
 	box-shadow:inset 0px 16px 16px rgba(0, 0, 0, 0.15);
-	border-radius: 8px 8px 0px 0px;
 	font-family:sans-serif;
 	color: #777777;
 	text-shadow: 0px 1px 0px rgba(255,255,255,0.25);
@@ -88,6 +85,7 @@ footer {
 	align-self: stretch;
 	flex-grow: 0;
 	
+	margin-top: 24px;
 }
 
 /* CSS for page header elements */
@@ -162,13 +160,17 @@ text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
 /* CSS for page footer elements */
 
 .pagefoot-links {
-	color: #777;
+	color: #6c6c6c;
+	font-style: normal;
 	text-decoration: none;
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.5);
+	transition: all 100ms linear;
 }
 
 .pagefoot-links:hover {
-	color: #555;
+	color: #36424e;
 	text-decoration: underline;
+	transition: all 100ms linear;
 }
 
 .pagefoot-links:active {
@@ -458,4 +460,46 @@ h1 h2 h3 {
 	width:100%;
 	margin:0px 32px;
 	gap:16px;
+}
+
+[popover] {
+
+	opacity: 0;
+    transform: translateY(-100%);
+
+	transition:
+		opacity 0.5s linear,
+		transform 0.5s cubic-bezier(.68,-0.55,.27,1.55),
+		display 0.25s allow-discrete,
+		overlay 0.25s allow-discrete;
+
+	/* Auto layout */
+	position: fixed;
+	min-width: 200px;
+	min-height: 20px;
+	margin: 0px 128px;
+	z-index: 256;
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+	border-radius: 8px;
+	align-self: center;
+	background: linear-gradient(180deg,white 0% ,#fff3c4 100%);
+	border: 1px solid #d2c26a;
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	gap: 8px;
+	inset: unset;
+	color: #5f3f03;
+}
+
+@starting-style {
+	[popover]:popover-open {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+}
+
+[popover]:popover-open {
+	opacity:1;
+	transform: translateY(48px);
 }
