@@ -121,7 +121,7 @@
 		<div class="docs-split">
 			<div id="nav-sidebar" class=panel-sidebar>
 				<summary class=topic-header>Table of Contents</summary>
-				<nav class=panel-sidebar-mainframe style="margin:4px 0px; flex-grow:1; overflow-y:scroll; border-radius: 0;">
+				<nav class=panel-sidebar-mainframe>
 					<ul style="margin-right:16px; display:flex; flex-direction:column; gap:8px;">
 							<li><a href="#category-important">Important News</a></li>
 							<li><a href="#category-flexigui">Updates to FlexiGUI</a></li>
@@ -260,23 +260,25 @@
 		
 		<a href="#" class=input-button style="position:fixed; z-index:255; width:128px; bottom:8px; right:8px; box-shadow:0px 1px 4px rgba(0,0,0,0.25); text-decoration:none;">▲ Back to top</href>
 		
+		{% include sidebartoggle.html %}
+
 		<script>
 			const searchInput = document.getElementById('blog-search');
         	const postCards = document.querySelectorAll('.blog-post');
 			const categoryHeaders = document.querySelectorAll('.blog-category');
         	const noResultsEl = document.getElementById('no-results');
 			noResultsEl.style.display = 'none'
-			
+
         	function filterPosts() {
         	    const query = searchInput.value.toLowerCase().trim();
 				categories = ['any'];
         	    let visibleCount = 0;
-			
+
         	    postCards.forEach(card => {
 					const title = card.getAttribute('data-title');
 					const content = card.textContent.toLowerCase();
 					const category = card.getAttribute('data-category');
-				
+
 					const matchesSearch = (title.includes(query) || content.includes(query));
 				
 					if (matchesSearch) {
@@ -292,7 +294,7 @@
 				} else if (query !== 0) {
 					noResultsEl.style.display = 'none';
 				}
-				
+
 				categoryHeaders.forEach(header => {
 					if (categories.includes(header.dataset.category) || query === '') {
 						header.style.display = 'block';

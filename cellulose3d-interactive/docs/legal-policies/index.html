@@ -13,7 +13,7 @@
 		<div class="docs-split">
 			<div id="nav-sidebar" class=panel-sidebar>
 				<summary class=topic-header>Table of Contents</summary>
-				<nav class=panel-sidebar-mainframe style="margin:4px 0px; flex-grow:1; overflow-y:scroll; border-radius: 0;">
+				<nav class=panel-sidebar-mainframe>
 					<ul style="margin-right:16px; display:flex; flex-direction:column; gap:8px;">
 							<li><a href="#about">Content Code</a></li>
 							<li><a href="#dw-eula">Digital Work End-User License Agreement</a></li>
@@ -83,7 +83,8 @@
 		{% include footer.html %}
 		
 		<a href="#" class=input-button style="position:fixed; z-index:255; width:128px; bottom:8px; right:8px; box-shadow:0px 1px 4px rgba(0,0,0,0.25); text-decoration:none;">▲ Back to top</href>
-		<a id="show-sidebar" class=sidebar-toggle-button>↪ Sidebar</a>
+		
+		{% include sidebartoggle.html %}
 
 	</body>
 </html>

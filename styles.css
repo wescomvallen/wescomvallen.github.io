@@ -502,6 +502,10 @@ h1 h2 h3 {
 	border-radius: 8px;
 	overflow-y:scroll;
 	max-height:100%;
+	margin:4px 0px;
+	flex-grow:1;
+	overflow-y:scroll;
+	border-radius: 0;
 }
 
 .panel-list {
