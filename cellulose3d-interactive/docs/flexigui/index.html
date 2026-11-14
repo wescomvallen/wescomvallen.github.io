@@ -10,10 +10,10 @@
 	<body>
 		{% include header.html %}
 		
-		<div style="display:flex; flex-direction:row; gap:16px; justify-content:center; margin-bottom: 24px; min-height: calc(100vh - 153px)">
-			<div class=panel-sidebar style="position:sticky; top:48px; min-width:128px; width:calc(95% - 1000px); max-width: 320px; max-height:calc(100vh - 64px);">
+		<div class=docs-split>
+			<div id="nav-sidebar" class=panel-sidebar>
 				<summary class=topic-header>Table of contents</summary>
-				<nav class=panel-list style="margin:4px 0px; flex-grow:1; overflow-y:scroll; border-radius: 0;">
+				<nav class=panel-sidebar-mainframe>
 					<ul style="margin-right:16px; display:flex; flex-direction:column; gap:8px;">
 							<li><a href="#about">							About FlexiGUI</a></li>
 							<li><a href="#features">						Feature set</a></li>
@@ -59,6 +59,7 @@
 							</ul>
 					</ul>
 				</nav>
+				<a class=subtle-links id="hide-sidebar">↩ Hide sidebar</a>
 				<a class=subtle-links href="/cellulose3d-interactive/docs/">↩ Go back to Documentation Homepage</a>
 			</div>
 			
@@ -392,22 +393,13 @@
 		{% include footer.html %}
 		
 		<a href="#" class=input-button style="position:fixed; z-index:255; width:128px; bottom:8px; right:8px; box-shadow:0px 1px 4px rgba(0,0,0,0.25); text-decoration:none;">▲ Back to top</a>
+		<a id="show-sidebar" class=sidebar-toggle-button>↪ Sidebar</a>
 
-		<div id="notif-toast" popover="auto">
-			<img src="/media/sticky-new.png" style="height:32px">
-			Template toast text, this is supposed to be hidden until a script calls this.
-		</div>
+		{% include sidebartoggle.js %}
+
+		{% include toast.html %}
 
 		<script>
-			function showToast(message) {
-				const toast = document.getElementById("notif-toast");
-				toast.innerHTML = `<img src="/media/sticky-new.png" style="height:32px"><span>${message}</span>`;
-				toast.style.display = "flex";
-				toast.showPopover()
-				let toastTimeout = setTimeout(() => {
-					toast.hidePopover();
-				}, 3000); // Hide after 3 seconds
-			}
 			document.querySelectorAll(".copy-anchor").forEach(anchor => {
 				anchor.addEventListener("click", function() {
 					const sectionId = this.getAttribute("data-section");

@@ -1,0 +1,16 @@
+<div id="notif-toast" popover="auto">
+	<img src="/media/docs-info.png" style="height:32px">
+	Template toast text, this is supposed to be hidden until a script calls this.
+</div>
+
+<script>
+	function showToast(message) {
+		const toast = document.getElementById("notif-toast");
+		toast.innerHTML = `<img src="/media/sticky-new.png" style="height:32px"><span>${message}</span>`;
+		toast.style.display = "flex";
+		toast.showPopover()
+		let toastTimeout = setTimeout(() => {
+			toast.hidePopover();
+		}, 3000); // Hide after 3 seconds
+	}
+</script>

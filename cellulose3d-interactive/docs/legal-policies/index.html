@@ -10,22 +10,25 @@
 	<body>
 		{% include header.html %}
 		
-		<div style="display:flex; flex-direction:row; gap:16px; justify-content:center; margin-bottom: 24px;">
-			<div class=panel-sidebar style="position:sticky; top:48px; min-width:128px; width:calc(95% - 1000px); max-width: 320px; max-height:calc(100vh - 64px);">
+		<div class="docs-split">
+			<div id="nav-sidebar" class=panel-sidebar>
 				<summary class=topic-header>Table of Contents</summary>
-				<nav class=panel-list style="margin:4px 0px; flex-grow:1; overflow-y:scroll; border-radius: 0;">
+				<nav class=panel-sidebar-mainframe style="margin:4px 0px; flex-grow:1; overflow-y:scroll; border-radius: 0;">
 					<ul style="margin-right:16px; display:flex; flex-direction:column; gap:8px;">
 							<li><a href="#about">Content Code</a></li>
-							<li><a href="#reuse-policy">Digital work Reuse policy</a></li>
+							<li><a href="#dw-eula">Digital Work End-User License Agreement</a></li>
+							<li><a href="#reuse-policy">Digital Work Reuse policy</a></li>
 							<li><a href="#fair-use">Fair Use Policy</a></li>
 					</ul>
 				</nav>
+				<a class=subtle-links id="hide-sidebar">↩ Hide sidebar</a>
 				<a class=subtle-links href="/cellulose3d-interactive/index.html">↩ Go back to homepage</a>
 			</div>
 			
 			<main style="margin:0">
 				<h1 class=topic-header>Legal Policies</h1>
 				<p>This page is dedicated for Cellulose3D Interactive's legal policies regarding usage of our digital works, moderation of community content, usage of our documentation, and more.</p>
+				<div class="docs-blip-warning"><img src="/media/docs-warning.png">Warning: We're not lawyers, but we feel that we are obligated to list and enforce these policies to prevent illegal activity and communication of radical ideologies that can destabilize or disrupt communities. We also do not like plagiarism</div>
 
 				<h2 id=about class=topic-header>Content Code</h2>
 				<p style="text-align: justify;">Content code applies to community-made blog posts, documentation, and software hosted, distributed, or advertised on this website. "Digital works" refers to community-made blog posts, documentation, and software hosted, distributed, or advertised on this website.</p>
@@ -80,6 +83,7 @@
 		{% include footer.html %}
 		
 		<a href="#" class=input-button style="position:fixed; z-index:255; width:128px; bottom:8px; right:8px; box-shadow:0px 1px 4px rgba(0,0,0,0.25); text-decoration:none;">▲ Back to top</href>
-		
+		<a id="show-sidebar" class=sidebar-toggle-button>↪ Sidebar</a>
+
 	</body>
 </html>

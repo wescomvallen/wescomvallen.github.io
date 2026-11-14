@@ -11,7 +11,7 @@
 		{% include header.html %}
 		
 		<div style="display:flex; flex-direction:row; gap:16px; justify-content:center; margin-bottom: 24px;">
-			<div class=panel-sidebar style="position:sticky; top:48px; min-width:128px; width:calc(95% - 1000px); max-width: 320px; max-height:calc(100vh - 64px);">
+			<div id="nav-sidebar" class=panel-sidebar style="position:sticky; top:48px; min-width:128px; width:calc(95% - 1000px); max-width: 320px; max-height:calc(100vh - 64px);">
 				<summary class=topic-header>Table of Contents</summary>
 				<nav class=panel-list style="margin:4px 0px; flex-grow:1; overflow-y:scroll; border-radius: 0;">
 					<ul style="margin-right:16px; display:flex; flex-direction:column; gap:8px;">
@@ -24,6 +24,7 @@
 							<li><a href="#add-community-docs">Adding Community Documentation</a></li>
 					</ul>
 				</nav>
+				<a class=subtle-links id="hide-sidebar">↩ Hide sidebar</a>
 				<a class=subtle-links href="/cellulose3d-interactive/index.html">↩ Go back to homepage</a>
 			</div>
 			
@@ -93,6 +94,8 @@
 		
 		{% include footer.html %}
 		
+		{% include sidebartoggle.js %}
+
 		<a href="#" class=input-button style="position:fixed; z-index:255; width:128px; bottom:8px; right:8px; box-shadow:0px 1px 4px rgba(0,0,0,0.25); text-decoration:none;">▲ Back to top</href>
 		
 	</body>
