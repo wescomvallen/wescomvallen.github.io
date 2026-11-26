@@ -498,6 +498,14 @@ small {
 	}
 }
 
+.panel-sidebar-list-root {
+	margin:8px 24px 8px;
+	display:flex;
+	flex-direction:column;
+	gap:8px;
+	text-indent:0px;
+}
+
 .panel-list {
 	
 	margin: 4px;
@@ -687,4 +695,13 @@ small {
 	gap: 8px;
 	padding: 8px;
 	width:calc(100% - 32px);
+}
+
+.docs-indent {
+	width:100%;
+	margin:8px 24px 0px;
+	display:flex;
+	gap: 8px;
+	align-items:flex-start;
+	flex-direction:column;
 }
